@@ -20,10 +20,15 @@ public class AnimeController {
 
     private final DateUtil dateUtil;
 
-    @GetMapping("/list")
+    @GetMapping("list")
     public List<Anime> list() {
         log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
-        return List.of(new Anime("DBZ"), new Anime("Berserk"), new Anime("Naruto"));
+        return List.of(new Anime("DBZ"), new Anime("Berserk"), new Anime("Naruto"), new Anime("Boku no hero"));
     }
 
+    @GetMapping("list2")
+    public List<Anime> list2() {
+        log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
+        return List.of(new Anime("One piece"), new Anime("Detective Conan"));
+    }
 }
